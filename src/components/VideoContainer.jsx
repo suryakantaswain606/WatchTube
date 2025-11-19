@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { youtube_popular_videos } from "../utils/constants";
-import { VideoCard, AdVideoCard } from "./videoCard";
+const google_API_Key = import.meta.env.VITE_GOOGLE_API_KEY;
+
+const youtube_popular_videos =
+  import.meta.env.VITE_YOUTUBE_POPULAR_VIDEOS + google_API_Key;
+
+import { VideoCard, AdVideoCard } from "./VideoCard";
 import { Link } from "react-router-dom";
 
 export const VideoContainer = () => {

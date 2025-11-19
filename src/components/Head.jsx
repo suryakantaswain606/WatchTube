@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { MagnifyingGlassIcon, UserIcon } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
-import {
-  google_API_Key,
-  Youtube_Search_API,
-  Youtube_Videos_API,
-} from "../utils/constants";
+
+const google_API_Key = import.meta.env.VITE_GOOGLE_API_KEY;
+
+const Youtube_Search_API = import.meta.env.VITE_YOUTUBE_SEARCH_API;
+
+const Youtube_Videos_API =
+  import.meta.env.VITE_YOUTUBE_VIDEOS_API + google_API_Key;
+
 import { cacheResults } from "../utils/searchSlice";
 import { clearVideos, videosBySearchQuery } from "../utils/videoSlice";
 import { Link, useNavigate } from "react-router-dom";
